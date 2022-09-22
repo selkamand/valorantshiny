@@ -9,10 +9,24 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      h1("valorantshiny")
+    shinydashboard::dashboardPage(
+      skin = "red",
+      shinydashboard::dashboardHeader(title = "ValorantShiny"),
+      shinydashboard::dashboardSidebar(
+        shinydashboard::sidebarMenu(
+          shinydashboard::menuItem("Strat Roulette", tabName = "strat_roulette", icon = icon("chess-board")),
+          shinydashboard::menuItem("Agent Roulette", tabName = "agent_roulette", icon = icon("people-group"))
+        )
+        ),
+      shinydashboard::dashboardBody(
+        shinydashboard::tabItems(
+          # First tab content
+          shinydashboard::tabItem(tabName = "strat_roulette", mod_strat_roulette_ui(id = "strat_roulette")),
+          shinydashboard::tabItem(tabName = "agent_roulette", mod_agent_roulette_ui(id = "agent_roulette"))
+
+        )
     )
-  )
+  ))
 }
 
 #' Add external Resources to the Application
