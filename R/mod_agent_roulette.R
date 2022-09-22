@@ -14,6 +14,11 @@ mod_agent_roulette_ui <- function(id){
       heading = "Agent Roulette",
       shinycssloaders::withSpinner(plotOutput(outputId = ns('out_plot_agent_roulette'))),
 
+      hr(),
+      actionButton(inputId = ns("in_bttn_reset"), icon = icon("arrows-rotate"), label = "Reset", width = "100%"),
+      br(),
+      br(),
+
       shinyWidgets::panel(
         heading = "Options",
         numericInput(inputId = ns('in_num_attackers'), value = 5, label = "Team Size (ATTACKERS)", min = 1, max = 5, step = 1) |> col_4(),
@@ -32,6 +37,8 @@ mod_agent_roulette_server <- function(id){
     ns <- session$ns
 
     gg <- reactive({
+      input$in_bttn_reset
+
       valorant::agent_roulette_customs_visualise(
         attacking_nplayers = input$in_num_attackers,
         defending_nplayers = input$in_num_defenders,
