@@ -17,14 +17,14 @@ mod_strat_roulette_ui <- function(id){
         fluidRow(
           shinydashboard::box(
             width = 12,
-            col_10(
+            col_8(
               htmlOutput(outputId = ns("htmlout_strat"))
             ),
-            col_2(
-              shinyWidgets::awesomeRadio(
+            col_4(
+              radioButtons(
                 inputId = ns("side"),
                 label = "Side",
-                choices = list("Attacking" = "Attacking", "Defending" = "Defending", "Both" = "Both"),
+                choices = list("Attacking" = "Attacking", "Defending" = "Defending", "Strats that work for both attackers and defenders" = "Both"),
                 selected = "Both"
               )
             )

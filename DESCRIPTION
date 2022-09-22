@@ -1,5 +1,5 @@
 Package: valorantshiny
-Title: valorantshiny
+Title: A shiny app for valorant minigames
 Version: 0.0.0.9000
 Authors@R: person('Sam', 'El-Kamand', email = 'sam.elkamand@gmail.com', role = c('cre', 'aut'))
 Description: A shiny dashboard containing assorted valorant related utilities.
@@ -7,6 +7,7 @@ License: MIT + file LICENSE
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.3.3),
+    pkgload,
     shiny (>= 1.7.2),
     shinycssloaders,
     shinydashboard,
