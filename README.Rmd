@@ -19,7 +19,9 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of valorantshiny is to make it easy to play minigames like strat/agnet roulette
+The goal of valorantshiny is to make it easy to play minigames like strat/agent roulette.
+
+Find the app online at: https://selkamand.shinyapps.io/valorantshiny/
 
 ## Installation
 
@@ -32,7 +34,7 @@ remotes::install_github('selkamand/valorantshiny')
 ## Quick start
 
 Start the shiny app by running the following
-```{r example}
+```{r example, eval = FALSE}
 library(valorantshiny)
 
 run_app()

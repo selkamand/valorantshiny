@@ -42,7 +42,9 @@ mod_agent_roulette_server <- function(id){
       valorant::agent_roulette_customs_visualise(
         attacking_nplayers = input$in_num_attackers,
         defending_nplayers = input$in_num_defenders,
-        agents_to_exclude = input$in_sel_agents_to_exclude, titlesize = 15, textsize = 6
+        agents_to_exclude = input$in_sel_agents_to_exclude,
+        titlesize = 15,
+        textsize = 6
         )
       })
 

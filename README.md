@@ -10,7 +10,9 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of valorantshiny is to make it easy to play minigames like
-strat/agnet roulette
+strat/agent roulette.
+
+Find the app online at: <https://selkamand.shinyapps.io/valorantshiny/>
 
 ## Installation
 
@@ -29,8 +31,6 @@ library(valorantshiny)
 
 run_app()
 ```
-
-<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
 
 ## Code of Conduct
 
