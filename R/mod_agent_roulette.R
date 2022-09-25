@@ -39,14 +39,24 @@ mod_agent_roulette_server <- function(id){
     gg <- reactive({
       input$in_bttn_reset
 
-      valorant::agent_roulette_customs_visualise(
+      validate(
+        need(input$in_num_attackers <= 5, message = "Attackers cannot have more than 5 players"),
+        need(input$in_num_defenders <= 5, message = "Defenders cannot have more than 5 players"),
+
+        need(input$in_num_attackers >= 1, message = "Attackers cannot have less than 1 player"),
+        need(input$in_num_defenders >= 1, message = "Defenders cannot have less than 1 player")
+      )
+
+      gg <- valorant::agent_roulette_customs_visualise(
         attacking_nplayers = input$in_num_attackers,
         defending_nplayers = input$in_num_defenders,
         agents_to_exclude = input$in_sel_agents_to_exclude,
         titlesize = 15,
         textsize = 6
-        )
-      })
+      )
+
+      return(gg)
+    })
 
     output$out_plot_agent_roulette <- renderPlot({gg()})
   })
